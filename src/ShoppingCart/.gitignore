@@ -229,3 +229,9 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+# Angular Cache
+ClientApp/.angular/cache/*
+
+# package-lock.json
+package-lock.json
