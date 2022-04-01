@@ -35,8 +35,6 @@ describe('HeaderComponent', () => {
     expect(component).toBeTruthy();
   });
 
-  // -----------
-
   it('should have the correct header text', () =>{
     const headerElement = fixture.debugElement.nativeElement;
     expect(headerElement.querySelector('H1').textContent).toBe('My Shopping Cart');
@@ -46,7 +44,5 @@ describe('HeaderComponent', () => {
     const headerElement = fixture.debugElement.nativeElement;
     expect(headerElement.querySelector('.username').textContent).toBe('Boba Fett');
   });
-
-  // -----------
 
 });
