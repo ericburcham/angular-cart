@@ -14,13 +14,9 @@ describe('HeaderComponent', () => {
       username: 'Boba Fett'
     };
 
-    TestBed.configureTestingModule({
+    await TestBed.configureTestingModule({
       declarations: [HeaderComponent],
       providers: [{provide: UserService, useValue: userServiceStub}]
-    });
-
-    await TestBed.configureTestingModule({
-      declarations: [ HeaderComponent ]
     })
     .compileComponents();
   });
