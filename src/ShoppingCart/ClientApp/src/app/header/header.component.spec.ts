@@ -30,6 +30,10 @@ describe('HeaderComponent', () => {
     expect(headerElement.querySelector('H1').textContent).toBe('My Shopping Cart');
   });
 
+  it('should display user name from UserDataService', () =>{
+    
+  });
+
   // -----------
 
 });
