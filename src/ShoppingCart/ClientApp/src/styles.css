@@ -592,3 +592,7 @@ code {
 .right-side-panel {
   width: 30%;
 }
+
+header {
+  display: contents;
+}
