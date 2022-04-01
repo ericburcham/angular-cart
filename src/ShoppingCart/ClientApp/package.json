@@ -2,12 +2,12 @@
   "name": "shoppingcart",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve --port 44462",
-    "build": "ng build",
-    "build:ssr": "ng run ShoppingCart:server:dev",
-    "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "ng": "npx ng",
+    "start": "npx ng serve --port 4300",
+    "build": "npx ng build",
+    "build:ssr": "npx ng run ShoppingCart:server:dev",
+    "watch": "npx ng build --watch --configuration development",
+    "test": "npx ng test"
   },
   "private": true,
   "dependencies": {

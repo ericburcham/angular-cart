@@ -15,6 +15,6 @@ describe('UserService', () => {
   });
 
   it('should have an empty username', () =>{
-    expect(service.username).toBe('');
+    expect(service.fullName).toBe('');
   })
 });

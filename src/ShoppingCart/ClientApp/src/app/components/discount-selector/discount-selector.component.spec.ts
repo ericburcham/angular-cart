@@ -1,11 +1,11 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 
-import { ApplyDiscountComponent } from './apply-discount.component';
+import { DiscountSelectorComponent } from './discount-selector.component';
 
-describe('ApplyDiscountComponent', () => {
-  let component: ApplyDiscountComponent;
-  let fixture: ComponentFixture<ApplyDiscountComponent>;
+describe('DiscountSelectorComponent', () => {
+  let component: DiscountSelectorComponent;
+  let fixture: ComponentFixture<DiscountSelectorComponent>;
   let shoppingCartServiceStub : Partial<ShoppingCartService>;
 
   beforeEach(async () => {
@@ -21,14 +21,14 @@ describe('ApplyDiscountComponent', () => {
     };
 
     await TestBed.configureTestingModule({
-      declarations: [ApplyDiscountComponent],
+      declarations: [DiscountSelectorComponent],
       providers: [{provide: ShoppingCartService, useValue:shoppingCartServiceStub}]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ApplyDiscountComponent);
+    fixture = TestBed.createComponent(DiscountSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

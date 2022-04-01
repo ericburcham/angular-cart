@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UserService } from '../services/user.service';
+import { UserService } from 'src/app/services/user/user.service';
 
 import { HeaderComponent } from './header.component';
 
@@ -11,7 +11,7 @@ describe('HeaderComponent', () => {
   beforeEach(async () => {
     // Stub UserService to provide the test username.
     userServiceStub = {
-      username: 'Boba Fett'
+      fullName: 'Boba Fett'
     };
 
     await TestBed.configureTestingModule({
@@ -38,7 +38,7 @@ describe('HeaderComponent', () => {
 
   it('should display user name from UserDataService', () =>{
     const headerElement = fixture.debugElement.nativeElement;
-    expect(headerElement.querySelector('.username').textContent).toBe('Boba Fett');
+    expect(headerElement.querySelector('.user-fullName').textContent).toBe('Boba Fett');
   });
 
 });
