@@ -1,0 +1,29 @@
+<table class="wide">
+
+    <thead>
+        <tr>
+            <th>SKU</th>
+            <th>Desc.</th>
+            <th>Qty.</th>
+            <th>Price</th>
+            <th>Sub</th>
+            <th>Disc.</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <ng-container *ngFor="let item of getItems(); let i = index">
+            <tr>
+                <td>{{item.sku}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.quantity.toFixed(0)}}</td>
+                <td>{{item.price.toFixed(2)}}</td>
+                <td>{{item.subTotal.toFixed(2)}}</td>
+                <td>{{item.discount.toFixed(2)}}</td>
+                <td>{{item.total.toFixed(2)}}</td>
+            </tr>
+        </ng-container>
+    </tbody>
+
+</table>

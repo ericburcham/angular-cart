@@ -596,3 +596,7 @@ code {
 header {
   display: contents;
 }
+
+table {
+  width: 100%;
+}
