@@ -40,6 +40,4 @@ describe('ApplyDiscountComponent', () => {
   it('should read shopping cart service items', () =>{
     expect(component.shoppingCartService.items.length).toBeTruthy();
   });
-
-  
 });
