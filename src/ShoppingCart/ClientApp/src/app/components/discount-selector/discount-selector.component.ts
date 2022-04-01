@@ -8,9 +8,15 @@ import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
   styleUrls: ['./discount-selector.component.css'],
 })
 export class DiscountSelectorComponent implements OnInit {
+  
   constructor(
     public shoppingCart: ShoppingCartService,
     public api: ApiService,
   ) {}
+
   ngOnInit(): void {}
+
+  handleChange(value: any) {
+    debugger
+  }
 }
