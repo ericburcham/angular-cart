@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.SpaProxy" Version="6.0.3" />
+    <PackageReference Include="Rick.Docs.Samples.RouteInfo" Version="1.0.0.8" />
   </ItemGroup>
 
   <ItemGroup>
