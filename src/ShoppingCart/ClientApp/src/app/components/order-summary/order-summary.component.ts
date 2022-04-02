@@ -4,9 +4,7 @@ import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'order-summary',
-  template: `
-    <strong>order summary</strong>
-  `
+  templateUrl: 'order-summary.component.html'
 })
 
 export class OrderSummaryComponent {
