@@ -8,7 +8,7 @@ namespace ShoppingCart.Controllers;
 [Route("[controller]")]
 public class CustomerController : ControllerBase
 {
-    [HttpGet("{id}")]
+    [HttpGet("{id:int}")]
     public CustomerResponse Get(int id)
     {
         var address1 = "12345 Galactic Way";
