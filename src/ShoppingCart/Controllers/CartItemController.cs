@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.Entities;
+using ShoppingCart.Providers;
 using ShoppingCart.Responses;
 
 namespace ShoppingCart.Controllers
@@ -13,15 +14,13 @@ namespace ShoppingCart.Controllers
         {
             var items = new List<CartItem>
             {
-                new()
+                new(ItemDataProvider.BobasHelmet)
                 {
-                    DealType = DealType.BuyOneGetOne, Description = "Rubber Bands", Id = 1, Price = 5.99M, Quantity = 2,
-                    Sku = "RBND"
+                    DealType = DealType.BuyOneGetOne, Quantity = 2
                 },
-                new()
+                new(ItemDataProvider.ChewysBowcaster)
                 {
-                    DealType = DealType.DollarOff, Description = "Bananas", Id = 2, Price = 11.99M, Quantity = 3,
-                    Sku = "BNNA"
+                    DealType = DealType.DollarOff, Quantity = 3
                 },
             };
 
