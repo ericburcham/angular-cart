@@ -1,6 +1,4 @@
-﻿using ShoppingCart.Responses;
-
-namespace ShoppingCart.Entities;
+﻿namespace ShoppingCart.Entities;
 
 public class Customer : Entity
 {
