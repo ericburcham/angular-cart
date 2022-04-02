@@ -12,13 +12,6 @@ namespace ShoppingCart.Controllers
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
-        {
-            _logger = logger;
-        }
-
         [HttpGet]
         public IEnumerable<WeatherForecast> Get()
         {
@@ -31,27 +24,4 @@ namespace ShoppingCart.Controllers
                 .ToArray();
         }
     }
-
-    //[ApiController]
-    //[Route("[controller]")]
-    //public class WeatherForecast2Controller : ControllerBase
-    //{
-    //    private static readonly string[] Summaries =
-    //    {
-    //        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    //    };
-
-    //    private readonly ILogger<WeatherForecastController> _logger;
-
-    //    public WeatherForecast2Controller(ILogger<WeatherForecastController> logger)
-    //    {
-    //        _logger = logger;
-    //    }
-
-    //    [HttpGet]
-    //    public IActionResult Get()
-    //    {
-    //        return ControllerContext.MyDisplayRouteInfo();
-    //    }
-    //}
 }

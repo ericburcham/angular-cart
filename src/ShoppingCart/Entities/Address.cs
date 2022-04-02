@@ -1,6 +1,4 @@
-﻿using ShoppingCart.Entities;
-
-namespace ShoppingCart.Responses;
+﻿namespace ShoppingCart.Entities;
 
 public class Address : Entity
 {

@@ -6,15 +6,10 @@ namespace ShoppingCart.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class WeatherForecast2Controller : ControllerBase
+public class CustomerController : ControllerBase
 {
-    private static readonly string[] Summaries =
-    {
-        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-    };
-
-    [HttpGet("{userId}")]
-    public UserResponse Get(int userId)
+    [HttpGet("{id}")]
+    public CustomerResponse Get(int id)
     {
         var address1 = "12345 Galactic Way";
         var address2 = "Hangar 5678";
@@ -45,13 +40,13 @@ public class WeatherForecast2Controller : ControllerBase
             Zip = zip
         };
 
-        return new UserResponse
+        return new CustomerResponse
         {
-            Data = new User
+            Data = new Customer
             {
                 BillingAddress = billingAddress,
                 Fullname = addressee,
-                Id = userId,
+                Id = id,
                 ShippingAddress = shippingAddress
             },
             Message = null,

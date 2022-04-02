@@ -2,6 +2,6 @@
 
 namespace ShoppingCart.Responses;
 
-public class UserResponse : Response<User>
+public class CustomerResponse : Response<Customer>
 {
 }
