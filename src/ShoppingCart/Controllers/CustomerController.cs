@@ -23,7 +23,7 @@ public class CustomerController : ControllerBase
             Address1 = address1,
             Address2 = address2,
             Addressee = addressee,
-            AddressType = "Billing",
+            AddressType = "billing",
             City = city,
             State = state,
             Zip = zip
@@ -34,7 +34,7 @@ public class CustomerController : ControllerBase
             Address1 = address1,
             Address2 = address2,
             Addressee = addressee,
-            AddressType = "Shipping",
+            AddressType = "shipping",
             City = city,
             State = state,
             Zip = zip
