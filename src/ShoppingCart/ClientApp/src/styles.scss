@@ -608,3 +608,9 @@ table {
 .app-header {
   margin-bottom: 12px;
 }
+
+.address {
+  strong {
+    text-transform: capitalize;
+  }
+}
