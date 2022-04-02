@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "npx ng",
-    "start": "npx ng serve --port 4300",
+    "start": "npx ng serve --port 44462",
     "build": "npx ng build",
     "build:ssr": "npx ng run ShoppingCart:server:dev",
     "watch": "npx ng build --watch --configuration development",
