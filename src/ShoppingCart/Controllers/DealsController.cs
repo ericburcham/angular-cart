@@ -7,10 +7,10 @@ namespace ShoppingCart.Controllers;
 
 [Route("api/[controller]")]
 [ApiController]
-public class DealController
+public class DealsController
 {
     [HttpGet]
-    public AvailableDealsResponse Get()
+    public DealListResponse Get()
     {
         var dealInfos = new List<DealInfo>();
         foreach (var dealType in Enum.GetValues<DealType>())
@@ -21,7 +21,7 @@ public class DealController
             dealInfos.Add(new DealInfo { Deal = deal, Description = description });
         }
 
-        return new AvailableDealsResponse { Data = dealInfos, Message = null, Ok = true };
+        return new DealListResponse { Data = dealInfos, Message = null, Ok = true };
     }
 
     private static T GetAttributeOfType<T>(Enum enumVal) where T : Attribute

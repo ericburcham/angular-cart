@@ -2,6 +2,6 @@
 
 namespace ShoppingCart.Responses;
 
-public class ShopItemResponse : Response<IList<ShopItem>>
+public class ProductListResponse : Response<IList<Product>>
 {
 }

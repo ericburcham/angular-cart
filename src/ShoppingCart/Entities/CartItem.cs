@@ -1,17 +1,17 @@
 ﻿namespace ShoppingCart.Entities;
 
-public class CartItem : ShopItem
+public class CartItem : Product
 {
     public CartItem()
     {
     }
 
-    public CartItem(ShopItem shopItem)
+    public CartItem(Product product)
     {
-        Description = shopItem.Description;
-        Id = shopItem.Id + 100;
-        Price = shopItem.Price;
-        Sku = shopItem.Sku;
+        Description = product.Description;
+        Id = product.Id + 100;
+        Price = product.Price;
+        Sku = product.Sku;
     }
 
     public string Deal => DealType.ToString();

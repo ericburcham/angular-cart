@@ -7,10 +7,10 @@ namespace ShoppingCart.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class ShopItemController : ControllerBase
+public class ProductsController : ControllerBase
 {
     [HttpGet]
-    public ShopItemResponse Get()
+    public ProductListResponse Get()
     {
         var searchResults = ItemDataProvider.AllItems
             .OrderBy(item => item.Description)
@@ -20,7 +20,7 @@ public class ShopItemController : ControllerBase
     }
 
     [HttpGet("{search}")]
-    public ShopItemResponse Get(string search)
+    public ProductListResponse Get(string search)
     {
         var searchResults = ItemDataProvider.AllItems
             .OrderBy(item => item.Description)
@@ -28,7 +28,7 @@ public class ShopItemController : ControllerBase
             .ToList();
 
         if (searchResults.Any() == false)
-            return new ShopItemResponse
+            return new ProductListResponse
             {
                 Data = null,
                 Message = "No items match your search text.",
@@ -38,9 +38,9 @@ public class ShopItemController : ControllerBase
         return BuildResponse(searchResults);
     }
 
-    private static ShopItemResponse BuildResponse(List<ShopItem> searchResults)
+    private static ProductListResponse BuildResponse(IList<Product> searchResults)
     {
-        return new ShopItemResponse
+        return new ProductListResponse
         {
             Data = searchResults,
             Message = null,

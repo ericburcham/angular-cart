@@ -7,7 +7,7 @@ namespace ShoppingCart.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class CustomerController : ControllerBase
+public class CustomersController : ControllerBase
 {
     [HttpGet("{customerId:int}")]
     public CustomerResponse Get(int customerId)

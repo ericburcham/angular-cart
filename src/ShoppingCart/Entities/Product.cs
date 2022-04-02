@@ -1,6 +1,6 @@
 ﻿namespace ShoppingCart.Entities
 {
-    public class ShopItem : Entity
+    public class Product : Entity
     {
         public string Sku { get; set; }
 

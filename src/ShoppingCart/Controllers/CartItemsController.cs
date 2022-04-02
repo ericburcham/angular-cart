@@ -7,10 +7,10 @@ namespace ShoppingCart.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CartItemController : ControllerBase
+    public class CartItemsController : ControllerBase
     {
         [HttpGet("{customerId:int}")]
-        public ShoppingCartResponse Get(int customerId)
+        public CartItemListResponse Get(int customerId)
         {
             var items = new List<CartItem>
             {
@@ -24,7 +24,7 @@ namespace ShoppingCart.Controllers
                 },
             };
 
-            return new ShoppingCartResponse
+            return new CartItemListResponse
             {
                 Data = items,
                 Message = null,
