@@ -19,10 +19,10 @@
                     <td>{{item.sku}}</td>
                     <td>{{item.description}}</td>
                     <td class="numeric">{{item.quantity.toFixed(0)}}</td>
-                    <td class="numeric">{{item.price.toFixed(2)}}</td>
-                    <td class="numeric">{{item.subTotal.toFixed(2)}}</td>
-                    <td class="numeric">{{item.discount.toFixed(2)}}</td>
-                    <td class="numeric">{{item.total.toFixed(2)}}</td>
+                    <td class="numeric">{{item.price|currency }}</td>
+                    <td class="numeric">{{item.subTotal|currency }}</td>
+                    <td class="numeric">{{item.deal}}</td>
+                    <td class="numeric">{{item.total|currency}}</td>
                 </tr>
             </ng-container>
         </tbody>
