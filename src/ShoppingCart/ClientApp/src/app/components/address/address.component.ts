@@ -17,27 +17,14 @@ class Address {
   templateUrl: './address.component.html',
   styleUrls: ['./address.component.css'],
 })
-export class AddressComponent implements OnInit {
+export class AddressComponent {
 
-  @Input('addressType') 
-  addressType: string = '';
-
-  address: Address;
+  @Input('data') data: any = {};
 
   constructor(
     public user: UserService,
     public shoppingCart: ShoppingCartService,
     public api: ApiService,
-  ) {
-    // this.address = user[`${this.addressType}Address`];
-    this.address = new Address();
-    this.address.address1 = "1234 Street Name"
-    this.address.address2 = "Suite 100";
-    this.address.city = "Houston";
-    this.address.state = "TX";
-    this.address.zip = "77044";
-  }
-
-  ngOnInit(): void {}
+  ) {}
 
 }

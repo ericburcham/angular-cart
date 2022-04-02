@@ -1,15 +1,15 @@
 <div class="container ----show-layout">
 
   <div class="flex row">
-    <header></header>
+    <header [user]="user"></header>
   </div>
 
   <div class="flex row spaced">
     <div class="grow" >
-      <address [addressType]="'billing'"></address>
+      <address [data]="user.billingAddress"></address>
     </div>
     <div class="grow">
-      <address [addressType]="'shipping'"></address>
+      <address [data]="user.shippingAddress"></address>
     </div>
   </div>
 

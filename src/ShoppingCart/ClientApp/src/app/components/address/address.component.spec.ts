@@ -5,12 +5,12 @@ import { AddressComponent } from './address.component';
 describe('AddressComponent', () => {
   let component: AddressComponent;
   let fixture: ComponentFixture<AddressComponent>;
-  let userServiceStub: Partial<UserService>;
+  let userServiceStub: any;
 
   beforeEach(async () => {
     // Stub UserService to provide the test username.
     userServiceStub = {
-      fullName: 'Boba Fett',
+      data: 'Boba Fett',
       // TODO add address info
     };
 
