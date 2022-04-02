@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShoppingCart.Entities;
+using ShoppingCart.Providers;
 using ShoppingCart.Responses;
 
 namespace ShoppingCart.Controllers;
@@ -11,44 +12,17 @@ public class CustomerController : ControllerBase
     [HttpGet("{customerId:int}")]
     public CustomerResponse Get(int customerId)
     {
-        var address1 = "12345 Galactic Way";
-        var address2 = "Hangar 5678";
-        var addressee = "Boba Fett";
-        var city = "Coruscant";
-        var state = "TX";
-        var zip = "99999";
+        var customer = CustomerProvider.AllCustomers.SingleOrDefault(customer => customer.Id == customerId);
 
-        var billingAddress = new Address
+        if (customer == null)
         {
-            Address1 = address1,
-            Address2 = address2,
-            Addressee = addressee,
-            AddressType = "billing",
-            City = city,
-            State = state,
-            Zip = zip
-        };
-
-        var shippingAddress = new Address
-        {
-            Address1 = address1,
-            Address2 = address2,
-            Addressee = addressee,
-            AddressType = "shipping",
-            City = city,
-            State = state,
-            Zip = zip
-        };
+            customer = CustomerProvider.BobaFett;
+            customer.Id = customerId;
+        }
 
         return new CustomerResponse
         {
-            Data = new Customer
-            {
-                BillingAddress = billingAddress,
-                Fullname = addressee,
-                Id = customerId,
-                ShippingAddress = shippingAddress
-            },
+            Data = customer,
             Message = null,
             Ok = true
         };
