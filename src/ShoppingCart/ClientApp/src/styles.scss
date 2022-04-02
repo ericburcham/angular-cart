@@ -524,9 +524,9 @@ label {
   white-space: nowrap;
 }
 
-input:not([type=button]), select {
-  width: 100%
-}
+// input:not([type=button]), select {
+//   width: 100%
+// }
 
 /* .ui-placeholder {
   position: absolute;
@@ -583,7 +583,13 @@ code {
 
 /* APP SPECIFIC STYLES */
 
-.panel {}
+.numeric {
+  text-align: right;
+}
+
+.solid {
+  background-color: #80808033;
+}
 
 .main-panel {
   width: 70%;
@@ -600,3 +606,40 @@ header {
 table {
   width: 100%;
 }
+
+// BOOTSTRAP STYLE RESETS
+
+.row {
+  margin-top: unset;
+  margin-left: unset;
+  margin-right: unset;
+  margin-bottom: unset;
+  flex-wrap: nowrap;
+}
+
+// SPECIFIC COMPONENT CLASSES
+
+.app-header {
+  margin-bottom: 12px;
+}
+
+.address {
+  strong {
+    text-transform: capitalize;
+  }
+}
+
+.discount-selector > .row > label { width: 50% }
+.discount-selector > .row > input { width: 50% }
+.discount-selector > .row > select { width: 50% }
+.discount-selector > .row { margin-bottom: 6px ;}
+
+.order-summary > div { display: flex; }
+.order-summary > div.subtotal { text-align: right; }
+.order-summary > div.discounts { text-align: right; }
+.order-summary > div.total { text-align: right; font-size: 2em; }
+.order-summary > div > label { width: 50%; font-weight: bold; text-align: right; }
+.order-summary > div > .value { width: 50%; text-align: right; }
+.order-summary > div > .value::before { content: '$'; }
+
+

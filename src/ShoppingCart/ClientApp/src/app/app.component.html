@@ -1,4 +1,4 @@
-<div class="container --show-layout">
+<div class="container ----show-layout">
 
   <div class="flex row">
     <header></header>
@@ -11,9 +11,6 @@
     <div class="grow">
       <address [addressType]="'shipping'"></address>
     </div>
-    <div class="grow">
-      <discount-selector></discount-selector>
-    </div>
   </div>
 
   <div class="flex row">
@@ -23,6 +20,11 @@
     </div>
 
     <div class="right-side-panel">
+
+      <div class="grow">
+        <discount-selector></discount-selector>
+      </div>
+      
       <div class="order-summary sticky">
         <order-summary></order-summary>        
       </div>

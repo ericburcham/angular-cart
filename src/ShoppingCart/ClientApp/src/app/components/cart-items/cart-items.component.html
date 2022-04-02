@@ -1,29 +1,31 @@
-<table class="wide">
+<div class="cart-items padded">
+    <table class="wide">
 
-    <thead>
-        <tr>
-            <th>SKU</th>
-            <th>Desc.</th>
-            <th>Qty.</th>
-            <th>Price</th>
-            <th>Sub</th>
-            <th>Disc.</th>
-            <th>Total</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        <ng-container *ngFor="let item of getItems(); let i = index">
+        <thead>
             <tr>
-                <td>{{item.sku}}</td>
-                <td>{{item.description}}</td>
-                <td>{{item.quantity.toFixed(0)}}</td>
-                <td>{{item.price.toFixed(2)}}</td>
-                <td>{{item.subTotal.toFixed(2)}}</td>
-                <td>{{item.discount.toFixed(2)}}</td>
-                <td>{{item.total.toFixed(2)}}</td>
+                <th>SKU</th>
+                <th>Desc.</th>
+                <th class="numeric">Qty.</th>
+                <th class="numeric">Price</th>
+                <th class="numeric">Sub</th>
+                <th class="numeric">Disc.</th>
+                <th class="numeric">Total</th>
             </tr>
-        </ng-container>
-    </tbody>
+        </thead>
 
-</table>
+        <tbody>
+            <ng-container *ngFor="let item of getItems(); let i = index">
+                <tr>
+                    <td>{{item.sku}}</td>
+                    <td>{{item.description}}</td>
+                    <td class="numeric">{{item.quantity.toFixed(0)}}</td>
+                    <td class="numeric">{{item.price.toFixed(2)}}</td>
+                    <td class="numeric">{{item.subTotal.toFixed(2)}}</td>
+                    <td class="numeric">{{item.discount.toFixed(2)}}</td>
+                    <td class="numeric">{{item.total.toFixed(2)}}</td>
+                </tr>
+            </ng-container>
+        </tbody>
+
+    </table>
+</div>
