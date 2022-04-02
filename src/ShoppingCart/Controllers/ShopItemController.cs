@@ -4,6 +4,8 @@ using ShoppingCart.Responses;
 
 namespace ShoppingCart.Controllers;
 
+[ApiController]
+[Route("[controller]")]
 public class ShopItemController : ControllerBase
 {
     private static readonly ShopItem[] ShopItems =

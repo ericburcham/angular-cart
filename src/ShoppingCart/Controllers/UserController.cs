@@ -2,54 +2,60 @@
 using ShoppingCart.Entities;
 using ShoppingCart.Responses;
 
-namespace ShoppingCart.Controllers
+namespace ShoppingCart.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class WeatherForecast2Controller : ControllerBase
 {
-    public class UserController : ControllerBase
+    private static readonly string[] Summaries =
     {
-        [HttpGet]
-        public UserResponse Get(long userId)
+        "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+    };
+
+    [HttpGet("{userId}")]
+    public UserResponse Get(int userId)
+    {
+        var address1 = "12345 Galactic Way";
+        var address2 = "Hangar 5678";
+        var addressee = "Boba Fett";
+        var city = "Coruscant";
+        var state = "TX";
+        var zip = "99999";
+
+        var billingAddress = new Address
         {
-            var address1 = "12345 Galactic Way";
-            var address2 = "Hangar 5678";
-            var addressee = "Boba Fett";
-            var city = "Coruscant";
-            var state = "TX";
-            var zip = "99999";
+            Address1 = address1,
+            Address2 = address2,
+            Addressee = addressee,
+            AddressType = "Billing",
+            City = city,
+            State = state,
+            Zip = zip
+        };
 
-            var billingAddress = new Address
-            {
-                Address1 = address1,
-                Address2 = address2,
-                Addressee = addressee,
-                AddressType = "Billing",
-                City = city,
-                State = state,
-                Zip = zip
-            };
+        var shippingAddress = new Address
+        {
+            Address1 = address1,
+            Address2 = address2,
+            Addressee = addressee,
+            AddressType = "Shipping",
+            City = city,
+            State = state,
+            Zip = zip
+        };
 
-            var shippingAddress = new Address
+        return new UserResponse
+        {
+            Data = new User
             {
-                Address1 = address1,
-                Address2 = address2,
-                Addressee = addressee,
-                AddressType = "Shipping",
-                City = city,
-                State = state,
-                Zip = zip
-            };
-
-            return new UserResponse
-            {
-                Data = new User
-                {
-                    BillingAddress = billingAddress,
-                    Fullname = addressee,
-                    Id = userId,
-                    ShippingAddress = shippingAddress
-                },
-                Message = null,
-                Ok = true
-            };
-        }
+                BillingAddress = billingAddress,
+                Fullname = addressee,
+                Id = userId,
+                ShippingAddress = shippingAddress
+            },
+            Message = null,
+            Ok = true
+        };
     }
 }
