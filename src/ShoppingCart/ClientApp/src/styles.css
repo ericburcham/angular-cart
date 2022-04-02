@@ -583,7 +583,9 @@ code {
 
 /* APP SPECIFIC STYLES */
 
-.panel {}
+.solid {
+  background-color: #80808033;
+}
 
 .main-panel {
   width: 70%;
@@ -599,4 +601,10 @@ header {
 
 table {
   width: 100%;
+}
+
+/* SPECIFIC COMPONENTS */
+
+.app-header {
+  margin-bottom: 12px;
 }
