@@ -524,9 +524,9 @@ label {
   white-space: nowrap;
 }
 
-input:not([type=button]), select {
-  width: 100%
-}
+// input:not([type=button]), select {
+//   width: 100%
+// }
 
 /* .ui-placeholder {
   position: absolute;
@@ -603,7 +603,17 @@ table {
   width: 100%;
 }
 
-/* SPECIFIC COMPONENTS */
+// BOOTSTRAP STYLE RESETS
+
+.row {
+  margin-top: unset;
+  margin-left: unset;
+  margin-right: unset;
+  margin-bottom: unset;
+  flex-wrap: nowrap;
+}
+
+// SPECIFIC COMPONENT CLASSES
 
 .app-header {
   margin-bottom: 12px;
@@ -614,3 +624,10 @@ table {
     text-transform: capitalize;
   }
 }
+
+.discount-selector > .row > label { width: 50% }
+.discount-selector > .row > input { width: 50% }
+.discount-selector > .row > select { width: 50% }
+.discount-selector > .row { margin-bottom: 6px ;}
+
+
