@@ -2,5 +2,4 @@
 
 public class AvailableDealsResponse : Response<List<DealInfo>>
 {
-
 }

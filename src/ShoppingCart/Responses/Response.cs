@@ -1,6 +1,4 @@
-﻿using ShoppingCart.Entities;
-
-namespace ShoppingCart.Responses
+﻿namespace ShoppingCart.Responses
 {
     public class Response<TPayload>
     {

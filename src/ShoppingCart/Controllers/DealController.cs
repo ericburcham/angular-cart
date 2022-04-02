@@ -22,10 +22,9 @@ public class DealController
         }
 
         return new AvailableDealsResponse { Data = dealInfos, Message = null, Ok = true };
-
     }
 
-    private static T GetAttributeOfType<T>(Enum enumVal) where T : System.Attribute
+    private static T GetAttributeOfType<T>(Enum enumVal) where T : Attribute
     {
         var type = enumVal.GetType();
         var memInfo = type.GetMember(enumVal.ToString());
