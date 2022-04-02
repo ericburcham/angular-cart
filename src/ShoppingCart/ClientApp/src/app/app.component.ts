@@ -13,7 +13,7 @@ export class AppComponent implements OnInit {
 
   title = 'app';
   
-  user: any = {};
+  user: any = { billingAddress: {}, shippingAddress: {} };
   cartItems: CartItem[] = [];
 
   constructor(
