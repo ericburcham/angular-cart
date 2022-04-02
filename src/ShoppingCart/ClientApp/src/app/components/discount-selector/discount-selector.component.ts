@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ApiService } from '../../services/api/api.service';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { Observable } from 'rxjs';
+import { DealService } from 'src/app/services/deal/deal.service';
+
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
+import { CartItem, Deal, DealType } from '../types';
 
 @Component({
   selector: 'discount-selector',
@@ -9,14 +12,52 @@ import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 })
 export class DiscountSelectorComponent implements OnInit {
   
+  sku?: any;
+  deal?: DealType;
+  deals: Deal[] = [];
+  itemWithDeal: Partial<CartItem> = {};
+
+  @Input('cartItems') cartItems: CartItem[] = [];
+  @Output('onApplyDeal') onApplyDeal = new EventEmitter<any>();
+
   constructor(
-    public shoppingCart: ShoppingCartService,
-    public api: ApiService,
+    public cart: ShoppingCartService,
+    public dealService: DealService,
   ) {}
 
-  ngOnInit(): void {}
-
-  handleChange(value: any) {
-    debugger
+  ngOnInit(): void {
+    this.dealService.getDeals()
+      .subscribe((r: any) => {
+        if (r.ok) {
+          this.deals = r.data;
+        }
+      });
   }
+  
+  ngOnChanges(changes: SimpleChanges) {
+    // This fires whenever passed cartItems input changes.
+    // This includes those times when an Deal is applied to some item.
+    if (changes.cartItems) {
+      const items = changes.cartItems.currentValue;
+      // here we simply deconstruct the item that a deal has been applied to 
+      // (we need it to mark it as selected in the dropdown)
+      this.itemWithDeal = items.find((x: CartItem) => !!x.deal) || {};
+    }
+  }
+
+  handleSkuChange(e: any) {
+    this.sku = e.target.value;
+  }
+
+  handleDealChange(e: any) {
+    this.deal = e.target.value;
+  }
+
+  handleApplyDeal() {
+    this.onApplyDeal.emit({
+      sku: this.sku, 
+      deal: this.deal
+    });
+  }
+
 }

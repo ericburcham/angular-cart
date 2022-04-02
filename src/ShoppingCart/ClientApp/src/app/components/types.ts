@@ -5,6 +5,10 @@ export type ShopItem = {
     id: number
 };
 
+export type Deal = {
+    deal: 'BuyOneGetOne',
+    description: 'Buy 1 get one free deal'
+};
 
 export type DealType = 'BuyOneGetOne' | 'DollarOff' | 'TenPercentOff';
 

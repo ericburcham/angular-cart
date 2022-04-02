@@ -2,17 +2,29 @@
     <strong>Apply Discount</strong>
     <div class="flex row">
         <label>SKU:</label>
-        <input type="text" />
+        <select (change)="handleSkuChange($event)">
+            <option [value]=""></option>
+            <ng-container *ngFor="let item of cartItems">
+                <option 
+                    [value]="item.sku"
+                    [selected]="item.sku === itemWithDeal.sku"
+                >{{item.description}}</option>
+            </ng-container>
+        </select>
     </div>
     <div class="flex row">
         <label>Discount Type:</label>
-        <select (change)="handleChange($event)">
-            <option value="10%off">10% Off</option>
-            <option value="$1off">$1 Off</option>
-            <option value="b1g1">Buy 1 Get 1</option>
+        <select (change)="handleDealChange($event)">
+            <option [value]=""></option>
+            <ng-container *ngFor="let item of deals">
+                <option 
+                    [value]="item.deal"
+                    [selected]="item.deal === itemWithDeal.deal"
+                >{{item.description}}</option>
+            </ng-container>
         </select>
     </div>
     <div class="textAlignRight footer">
-        <button>Apply</button>
+        <button (click)="handleApplyDeal()">Apply</button>
     </div>
 </div>

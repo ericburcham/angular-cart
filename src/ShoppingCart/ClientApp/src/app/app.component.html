@@ -22,7 +22,10 @@
     <div class="right-side-panel">
 
       <div class="grow">
-        <discount-selector></discount-selector>
+        <discount-selector 
+          [cartItems]="cartItems"
+          (onApplyDeal)="handleApplyDeal($event)"
+        ></discount-selector>
       </div>
       
       <div class="order-summary sticky">

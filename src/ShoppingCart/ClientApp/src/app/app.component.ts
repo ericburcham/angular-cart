@@ -34,10 +34,24 @@ export class AppComponent implements OnInit {
       .subscribe((r: any) => {
         if (r.ok) {
           this.cartItems = r.data.map((x: CartItem) => {
-            return calculateItem(x);
+
+            // TODO delete this line and uncomment the following
+            return calculateItem({ ...x, deal: undefined } as any);
+
+            //return calculateItem(x);
           })
         }
       });
+  }
+
+  handleApplyDeal(e: any) {
+
+    this.cartItems = this.cartItems.map(x => {
+      return {
+        ...x,
+        deal: x.sku === e.sku ? e.deal : undefined
+      };
+    })
   }
 
 }
