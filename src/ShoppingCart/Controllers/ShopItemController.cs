@@ -4,6 +4,8 @@ using ShoppingCart.Responses;
 
 namespace ShoppingCart.Controllers;
 
+[ApiController]
+[Route("api/[controller]")]
 public class ShopItemController : ControllerBase
 {
     private static readonly ShopItem[] ShopItems =
@@ -13,12 +15,12 @@ public class ShopItemController : ControllerBase
         new() { Description = "Pepto Bismol", Id = 3, Price = 3.99M, Sku = "PPTO" }
     };
 
-    [HttpGet]
-    public ShopItemResponse Lookup(string search)
+    [HttpGet("{search}")]
+    public ShopItemResponse Get(string search)
     {
         var suggestion = ShopItems
             .OrderBy(item => item.Description)
-            .FirstOrDefault(item => item.Description.Contains(search));
+            .FirstOrDefault(item => item.Description.Contains(search, StringComparison.OrdinalIgnoreCase));
 
         if (suggestion == null)
             return new ShopItemResponse

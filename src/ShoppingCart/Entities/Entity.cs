@@ -1,6 +1,6 @@
 ﻿namespace ShoppingCart.Entities;
 
-public abstract class Entity : IIdentifiable<long>
+public abstract class Entity : IIdentifiable<int>
 {
-    public long Id { get; set; }
+    public int Id { get; set; }
 }

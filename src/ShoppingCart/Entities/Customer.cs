@@ -2,7 +2,7 @@
 
 namespace ShoppingCart.Entities;
 
-public class User : Entity
+public class Customer : Entity
 {
     public string Fullname { get; set; }
 
