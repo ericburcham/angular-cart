@@ -8,7 +8,6 @@ const PROXY_CONFIG = [
     context: [
       "/api/customer",
       "/api/shopitem",
-      "/api/weatherforecast",
    ],
     target: target,
     secure: false,
