@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using ShoppingCart.Entities;
 using ShoppingCart.Providers;
 using ShoppingCart.Responses;
 
@@ -8,15 +9,25 @@ namespace ShoppingCart.Controllers;
 [Route("api/[controller]")]
 public class ShopItemController : ControllerBase
 {
+    [HttpGet]
+    public ShopItemResponse Get()
+    {
+        var searchResults = ItemDataProvider.AllItems
+            .OrderBy(item => item.Description)
+            .ToList();
+
+        return BuildResponse(searchResults);
+    }
+
     [HttpGet("{search}")]
     public ShopItemResponse Get(string search)
     {
-        var suggestion = ItemDataProvider.AllItems
+        var searchResults = ItemDataProvider.AllItems
             .OrderBy(item => item.Description)
             .Where(item => item.Description.Contains(search, StringComparison.OrdinalIgnoreCase))
             .ToList();
 
-        if (suggestion.Any() == false)
+        if (searchResults.Any() == false)
             return new ShopItemResponse
             {
                 Data = null,
@@ -24,9 +35,14 @@ public class ShopItemController : ControllerBase
                 Ok = false
             };
 
+        return BuildResponse(searchResults);
+    }
+
+    private static ShopItemResponse BuildResponse(List<ShopItem> searchResults)
+    {
         return new ShopItemResponse
         {
-            Data = suggestion,
+            Data = searchResults,
             Message = null,
             Ok = true
         };
