@@ -1,4 +1,4 @@
-export type ShopItem = {
+export type Product = {
     sku: string,
     description: string,
     price: number,
