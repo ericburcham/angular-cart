@@ -1,6 +1,38 @@
-<body>
-  <app-nav-menu></app-nav-menu>
-  <div class="container">
-    <router-outlet></router-outlet>
+<div class="container ----show-layout">
+
+  <div class="flex row">
+    <header [customer]="customer"></header>
   </div>
-</body>
+
+  <div class="flex row spaced">
+    <div class="grow" >
+      <address [data]="customer.billingAddress"></address>
+    </div>
+    <div class="grow">
+      <address [data]="customer.shippingAddress"></address>
+    </div>
+  </div>
+
+  <div class="flex row">
+  
+    <div class="main-panel">
+      <cart-items [data]="cartItems" (onChange)="handleCartItemsChange($event)" ></cart-items>
+    </div>
+
+    <div class="right-side-panel">
+
+      <div class="grow">
+        <discount-selector 
+          [cartItems]="cartItems"
+          (onApplyDeal)="handleApplyDeal($event)"
+        ></discount-selector>
+      </div>
+      
+      <div class="order-summary sticky">
+        <order-summary [cartItems]="cartItems"></order-summary>        
+      </div>
+    </div>
+
+  </div>
+</div>
+

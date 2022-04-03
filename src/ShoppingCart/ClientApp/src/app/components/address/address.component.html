@@ -1,0 +1,12 @@
+<div class="address solid padded">
+    <strong>
+        {{data.addressType}} address
+    </strong>
+    <div>{{data.addressee}}</div>
+    <div>{{data.address1}}</div>
+    <div *ngIf="data.address2">{{data.address2}}</div>
+    <div>{{data.city}}, {{data.state}} {{data.zip}}</div>
+</div>
+
+
+
