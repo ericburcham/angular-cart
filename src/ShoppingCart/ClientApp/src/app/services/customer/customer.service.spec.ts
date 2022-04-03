@@ -13,8 +13,4 @@ describe('CustomerService', () => {
   it('should be created', () => {
     expect(service).toBeTruthy();
   });
-
-  it('should have an empty username', () =>{
-    expect(service.fullName).toBe('');
-  })
 });
