@@ -2,21 +2,21 @@
     <div class="subtotal">
         <label>Subtotal:</label>
         <div class="value">
-            999.99
+            {{summary.subTotal|currency}}
         </div>
     </div>
 
-    <div class="discounts">
+    <div *ngIf="summary.discount" class="discounts">
         <label>Discounts:</label>
         <div class="value">
-            200.00
+            {{summary.discount|currency}}
         </div>
     </div>
 
     <div class="total">
         <label>Total:</label>
         <div class="value">
-            799.99
+            {{summary.total|currency}}
         </div>
     </div>
 </div>

@@ -44,14 +44,30 @@ export class AppComponent implements OnInit {
       });
   }
 
-  handleApplyDeal(e: any) {
+  updateItems(dataForItem?: (x: CartItem) => any) {
+    this.cartItems = this.cartItems.map(
+      (item: CartItem) => {
+        return calculateItem(
+          item, 
+          dataForItem ? dataForItem(item) : undefined
+        );
+      }
+    );
+  }
 
-    this.cartItems = this.cartItems.map(x => {
-      return {
-        ...x,
-        deal: x.sku === e.sku ? e.deal : undefined
-      };
-    })
+  handleApplyDeal(e: any) {
+    this.updateItems(
+      (x: CartItem) => (
+        x.sku === e.sku
+        ? { deal: e.deal } 
+        : undefined
+      )
+    );
+  }
+
+  handleCartItemsChange(items: CartItem[]) {
+    this.cartItems = items;
+    this.updateItems();
   }
 
 }

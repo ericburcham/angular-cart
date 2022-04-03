@@ -26,3 +26,9 @@ export interface CartItem extends CartItemDTO {
     total: number;
     discount: number;
 }
+
+export type OrderSummary = {
+    subTotal: number;
+    discount: number;
+    total: number;
+};

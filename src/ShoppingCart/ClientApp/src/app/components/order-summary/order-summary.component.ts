@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
-import { ApiService } from 'src/app/services/api/api.service';
-import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { CartItem, OrderSummary } from '../types';
+import { calculateOrderSummary } from './calculateOrderSummary';
 
 @Component({
   selector: 'order-summary',
@@ -8,8 +8,18 @@ import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';
 })
 
 export class OrderSummaryComponent {
-  constructor(
-    public shoppingCart: ShoppingCartService,
-    public api: ApiService,
-  ) {}
+
+  summary: Partial<OrderSummary> = {};
+
+  @Input('cartItems') cartItems: CartItem[] = [];
+  
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes.cartItems) {
+      const items = changes.cartItems.currentValue;
+      if (items.length) {
+        this.summary = calculateOrderSummary(items);
+      }
+    }
+  }
 }
+

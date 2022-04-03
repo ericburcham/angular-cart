@@ -16,7 +16,7 @@
   <div class="flex row">
   
     <div class="main-panel">
-      <cart-items [data]="cartItems" ></cart-items>
+      <cart-items [data]="cartItems" (onChange)="handleCartItemsChange($event)" ></cart-items>
     </div>
 
     <div class="right-side-panel">
@@ -29,7 +29,7 @@
       </div>
       
       <div class="order-summary sticky">
-        <order-summary></order-summary>        
+        <order-summary [cartItems]="cartItems"></order-summary>        
       </div>
     </div>
 
