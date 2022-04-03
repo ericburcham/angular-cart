@@ -23,7 +23,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="ClientApp\src\testing\async-observable-helpers.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ClientApp\.angular\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\testing\async-observable-helpers.ts" />
   </ItemGroup>
 
     <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
