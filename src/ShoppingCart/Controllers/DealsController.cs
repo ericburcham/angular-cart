@@ -21,6 +21,8 @@ public class DealsController
             dealInfos.Add(new DealInfo { Deal = deal, Description = description });
         }
 
+        dealInfos = dealInfos.OrderBy(dealInfo => dealInfo.Description).ToList();
+
         return new DealListResponse { Data = dealInfos, Message = null, Ok = true };
     }
 

@@ -246,10 +246,10 @@ h6 {
   }
   
   .noSelect {
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+    -webkit-customer-select: none;
+    -moz-customer-select: none;
+    -ms-customer-select: none;
+    customer-select: none;
   }
   
   .clickable {
@@ -640,6 +640,20 @@ table {
 .order-summary > div.total { text-align: right; font-size: 2em; }
 .order-summary > div > label { width: 50%; font-weight: bold; text-align: right; }
 .order-summary > div > .value { width: 50%; text-align: right; }
-.order-summary > div > .value::before { content: '$'; }
 
 
+input[type=number].qty {
+  // position: relative;
+  width: 80px;
+  text-align: center;
+}
+
+input[type=number].qty::-webkit-inner-spin-button, 
+input[type=number].qty::-webkit-outer-spin-button {  
+  opacity: 0.1;
+}
+
+input[type=number].qty:hover::-webkit-inner-spin-button, 
+input[type=number].qty:hover::-webkit-outer-spin-button {  
+  opacity: 1;
+}

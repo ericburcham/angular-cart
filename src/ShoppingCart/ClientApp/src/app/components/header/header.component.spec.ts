@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UserService } from 'src/app/services/user/user.service';
+import { CustomerService } from 'src/app/services/customer/customer.service';
 
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
-  let userServiceStub: Partial<UserService>;
+  let customerServiceStub: Partial<CustomerService>;
 
   beforeEach(async () => {
-    // Stub UserService to provide the test username.
-    userServiceStub = {
+    // Stub CustomerService to provide the test username.
+    customerServiceStub = {
       fullName: 'Boba Fett'
     };
 
     await TestBed.configureTestingModule({
       declarations: [HeaderComponent],
-      providers: [{provide: UserService, useValue: userServiceStub}]
+      providers: [{provide: CustomerService, useValue: customerServiceStub}]
     })
     .compileComponents();
   });
@@ -36,9 +36,9 @@ describe('HeaderComponent', () => {
     expect(headerElement.querySelector('H1').textContent).toBe('My Shopping Cart');
   });
 
-  it('should display user name from UserDataService', () =>{
+  it('should display customer name from CustomerService', () =>{
     const headerElement = fixture.debugElement.nativeElement;
-    expect(headerElement.querySelector('.user-fullName').textContent).toBe('Boba Fett');
+    expect(headerElement.querySelector('.customer-fullName').textContent).toBe('Boba Fett');
   });
 
 });

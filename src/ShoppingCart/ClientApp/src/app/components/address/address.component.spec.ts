@@ -1,22 +1,22 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UserService } from 'src/app/services/user/user.service';
+import { CustomerService } from 'src/app/services/customer/customer.service';
 import { AddressComponent } from './address.component';
 
 describe('AddressComponent', () => {
   let component: AddressComponent;
   let fixture: ComponentFixture<AddressComponent>;
-  let userServiceStub: Partial<UserService>;
+  let customerServiceStub: any;
 
   beforeEach(async () => {
-    // Stub UserService to provide the test username.
-    userServiceStub = {
-      fullName: 'Boba Fett',
+    // Stub CustomerService to provide the test username.
+    customerServiceStub = {
+      data: 'Boba Fett',
       // TODO add address info
     };
 
     await TestBed.configureTestingModule({
       declarations: [AddressComponent],
-      providers: [{provide: UserService, useValue: userServiceStub}]
+      providers: [{provide: CustomerService, useValue: customerServiceStub}]
     })
     .compileComponents();
   });
