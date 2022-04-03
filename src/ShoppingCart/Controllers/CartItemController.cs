@@ -16,11 +16,13 @@ namespace ShoppingCart.Controllers
             {
                 new(ItemDataProvider.BobasHelmet)
                 {
-                    DealType = DealType.BuyOneGetOne, Quantity = 2
+                    DealType = null,
+                    Quantity = 2
                 },
                 new(ItemDataProvider.ChewysBowcaster)
                 {
-                    DealType = DealType.DollarOff, Quantity = 3
+                    DealType = null,
+                    Quantity = 3
                 },
             };
 

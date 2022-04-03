@@ -11,7 +11,12 @@ export function calculateItem(item: CartItem, data?: Partial<CartItem>) {
   
   switch (calculatedItem.deal) {
     case 'BuyOneGetOne':
-      calculatedItem.total = Math.floor(item.quantity / 2) * item.price;
+      debugger;
+      let subtotal = calculatedItem.subTotal;
+      let quantity = item.quantity;
+      let quantityFree = Math.floor(quantity / 2);
+      let discount = quantityFree * item.price;
+      calculatedItem.total = subtotal - discount;
       break;
     case 'TenPercentOff':
       calculatedItem.total = item.quantity * item.price * 0.9;
