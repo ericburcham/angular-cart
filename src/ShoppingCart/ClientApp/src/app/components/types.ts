@@ -10,7 +10,7 @@ export type Deal = {
     description: 'Buy 1 get one free deal'
 };
 
-export type DealType = 'BuyOneGetOne' | 'DollarOff' | 'TenPercentOff';
+export type DealType = 'BuyOneGetOne' | 'DollarOff' | 'NoDeal' | 'TenPercentOff';
 
 export type CartItemDTO = {
     deal: DealType,
@@ -18,7 +18,7 @@ export type CartItemDTO = {
     sku: string,
     description: string,
     price: number,
-    id: number
+    id: number,
 };
 
 export interface CartItem extends CartItemDTO {

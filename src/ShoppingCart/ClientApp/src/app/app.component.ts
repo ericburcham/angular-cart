@@ -35,11 +35,8 @@ export class AppComponent implements OnInit {
         if (r.ok) {
           this.cartItems = r.data.map((x: CartItem) => {
 
-            // TODO delete this line and uncomment the following
-            return calculateItem({ ...x, deal: undefined } as any);
-
-            //return calculateItem(x);
-          })
+            return calculateItem(x);
+          });
         }
       });
   }
