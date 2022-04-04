@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
-import { Observable } from 'rxjs';
 import { DealService } from 'src/app/services/deal/deal.service';
 
 import { ShoppingCartService } from '../shopping-cart/shopping-cart.service';

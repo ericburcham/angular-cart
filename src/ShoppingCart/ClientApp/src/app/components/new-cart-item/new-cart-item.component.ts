@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges, ViewChild } from '@angular/core';
 import { ProductService } from 'src/app/services/product/product.service';
-import { CartItem, OrderSummary, Product } from '../types';
+import { CartItem, Product } from '../types';
 
 @Component({
   selector: 'new-cart-item',
