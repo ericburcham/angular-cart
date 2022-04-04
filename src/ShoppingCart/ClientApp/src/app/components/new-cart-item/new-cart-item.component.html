@@ -3,9 +3,10 @@
     <strong>Add a product</strong>
     <div class="flex row spaced align-items-center">
         <div class="flex row grow">
-            <input class="grow"
+            <input 
+                #input
+                class="grow"
                 type="text" 
-                (keydown)="handleKey($event)"
                 list="suggestions" 
                 (change)="handleSelect($event)"
                 placeholder="What do you want to add?"
