@@ -57,7 +57,7 @@ export class AppComponent implements OnInit {
       (x: CartItem) => (
         x.sku === e.sku
         ? { deal: e.deal } 
-        : undefined
+        : { deal: undefined } 
       )
     );
   }
