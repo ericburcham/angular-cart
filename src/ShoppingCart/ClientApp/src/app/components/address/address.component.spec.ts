@@ -1,21 +1,16 @@
-import { DebugElement } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { AddressComponent } from './address.component';
 
 describe('AddressComponent', () => {
+  // System under test.
   let component: AddressComponent;
   let fixture: ComponentFixture<AddressComponent>;
 
-  beforeEach(async () => {
-    await TestBed.compileComponents();
-  });
-
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AddressComponent] });
+    TestBed.configureTestingModule({ declarations: [AddressComponent] }).compileComponents();
     fixture = TestBed.createComponent(AddressComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
   });
 
   describe('when an address does not have a value for address2', () => {
@@ -30,7 +25,9 @@ describe('AddressComponent', () => {
     let city: string;
     let state: string;
     let zip: string;
+
     beforeEach(() => {
+      // Create a test address.
       testData = {
         addressType: 'addressWithoutAddress2.addressType',
         addressee: 'addressWithoutAddress2.addressee',
@@ -40,14 +37,18 @@ describe('AddressComponent', () => {
         zip: 'addressWithoutAddress2.zip',
       };
 
+      // Set the `data` input's value to the test address.
       component.data = testData;
+
+      // Perform initial template binding.
       fixture.detectChanges();
 
+      // Read values from the DOM
       const debugElement = fixture.debugElement;
       addressType = debugElement.query(By.css('.address-type')).nativeElement.textContent;
       addressee = debugElement.query(By.css('.addressee')).nativeElement.textContent;
       address1 = debugElement.query(By.css('.address1')).nativeElement.textContent;
-      address2 = debugElement.query(By.css('.address2'));
+      address2 = debugElement.query(By.css('.address2')); // Cannot read `nativeElement` as we expect the query result to be null.
       city = debugElement.query(By.css('.city')).nativeElement.textContent;
       state = debugElement.query(By.css('.state')).nativeElement.textContent;
       zip = debugElement.query(By.css('.zip')).nativeElement.textContent;
@@ -95,6 +96,7 @@ describe('AddressComponent', () => {
     let state: string;
     let zip: string;
     beforeEach(() => {
+      // Create a test address.
       testData = {
         addressType: 'addressWithAddress2.addressType',
         addressee: 'addressWithAddress2.addressee',
@@ -105,9 +107,13 @@ describe('AddressComponent', () => {
         zip: 'addressWithAddress2.zip',
       };
 
+      // Set the `data` input's value to the test address.
       component.data = testData;
+
+      // Perform initial template binding.
       fixture.detectChanges();
 
+      // Read values from the DOM
       const debugElement = fixture.debugElement;
       addressType = debugElement.query(By.css('.address-type')).nativeElement.textContent;
       addressee = debugElement.query(By.css('.addressee')).nativeElement.textContent;
