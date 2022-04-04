@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
   
   customer: any = { billingAddress: {}, shippingAddress: {} };
   cartItems: CartItem[] = [];
+  cartSkus: Record<string, boolean> = {};
 
   constructor(
     public customerService: CustomerService,
@@ -34,22 +35,25 @@ export class AppComponent implements OnInit {
       .subscribe((r: any) => {
         if (r.ok) {
           this.cartItems = r.data.map((x: CartItem) => {
-
             return calculateItem(x);
           });
+          this.updateItems();
         }
       });
   }
 
   updateItems(dataForItem?: (x: CartItem) => any) {
     this.cartItems = this.cartItems.map(
-      (item: CartItem) => {
-        return calculateItem(
+      (item: CartItem) => 
+        calculateItem(
           item, 
           dataForItem ? dataForItem(item) : undefined
-        );
-      }
+        )
     );
+    // create sku map for carted items
+    this.cartSkus = this.cartItems.reduce(
+      (map: any, item: CartItem) => Object.assign(map, { [item.sku]: true })
+    , {});
   }
 
   handleApplyDeal(e: any) {
@@ -57,14 +61,36 @@ export class AppComponent implements OnInit {
       (x: CartItem) => (
         x.sku === e.sku
         ? { deal: e.deal } 
-        : undefined
+        : { deal: undefined } 
       )
     );
   }
 
   handleCartItemsChange(items: CartItem[]) {
-    this.cartItems = items;
+    this.cartItems = [ ...items ];
     this.updateItems();
   }
 
+  handleAddCartItem(item: CartItem) {
+    if (this.cartSkus[item.sku]) {
+      return this._addToExistingItem(item);
+    }
+    this._addNewItem(item);    
+  }
+
+  _addNewItem(item: CartItem) {
+    this.cartItems = [
+      ...this.cartItems,
+      calculateItem(item)
+    ];
+    this.updateItems();
+  }
+
+  _addToExistingItem(item: CartItem) {
+    this.updateItems((existing: CartItem) => ({ 
+      quantity: existing.sku === item.sku 
+        ? existing.quantity + item.quantity 
+        : existing.quantity
+    }))
+  }
 }

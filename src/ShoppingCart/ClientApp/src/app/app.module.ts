@@ -9,6 +9,7 @@ import { AddressComponent } from './components/address/address.component';
 import { DiscountSelectorComponent } from './components/discount-selector/discount-selector.component';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { NewCartItemComponent } from './components/new-cart-item/new-cart-item.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     DiscountSelectorComponent,
     CartItemsComponent,
     OrderSummaryComponent,
+    NewCartItemComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
