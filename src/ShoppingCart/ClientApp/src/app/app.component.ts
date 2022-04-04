@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { calculateItem } from './components/cart-items/calculateItem';
-import { CartItem, CartItemDTO } from './components/types';
+import { CartItem, } from './components/types';
 import { CartItemService } from './services/cart-item/cart-item.service';
 import { CustomerService } from './services/customer/customer.service';
 

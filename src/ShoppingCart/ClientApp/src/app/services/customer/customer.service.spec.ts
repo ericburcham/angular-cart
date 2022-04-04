@@ -8,10 +8,7 @@ describe('CustomerService', () => {
   // This is our system under test.
   let customerService: CustomerService;
 
-  // This is an HttpClient.
-  let httpClient: HttpClient;
-
-  // This is how we test calls to our HttpClient.
+  // This is how we test calls to our HttpClient.  We need it so we can make assertions about what calls it receives from our service.
   let testController: HttpTestingController;
 
   afterEach(() => {
@@ -25,13 +22,13 @@ describe('CustomerService', () => {
       imports: [HttpClientTestingModule]
     });
 
-    // Get an HttpClient to test with.
-    httpClient = TestBed.inject(HttpClient);
-
     // Get an HttpTestingController for making assertions against the HttpClient.
     testController = TestBed.inject(HttpTestingController);
 
     // Instantiate a CustomerService so we can test it.
+    // It needs an HttpClient on custruction, so we use the TestBed
+    // to hydrate one and pass it in.
+    const httpClient = TestBed.inject(HttpClient);
     customerService = new CustomerService(httpClient);
   });
 
