@@ -1,9 +1,11 @@
 <div class="container ----show-layout">
 
+  <!-- APP BAR -->
   <div class="flex row">
     <header [customer]="customer"></header>
   </div>
 
+  <!-- ADDRESSES -->
   <div class="flex row spaced">
     <div class="grow" >
       <address [data]="customer.billingAddress"></address>
@@ -13,26 +15,34 @@
     </div>
   </div>
 
+  <!-- MAIN ROW -->
   <div class="flex row">
-  
-    <div class="main-panel">
+    
+    <!-- MAIN PANEL   -->
+    <div class="main-panel grow">
       <cart-items [data]="cartItems" (onChange)="handleCartItemsChange($event)" ></cart-items>
+      <new-cart-item
+        [cartItems]="cartItems"
+        (onAdd)="handleAddCartItem($event)"
+      ></new-cart-item>
     </div>
 
+    <!-- SIDE PANEL   -->
     <div class="right-side-panel">
 
+      <!-- DEAL SELECTOR -->
       <div class="grow">
         <discount-selector 
           [cartItems]="cartItems"
           (onApplyDeal)="handleApplyDeal($event)"
         ></discount-selector>
       </div>
-      
+
+      <!-- ORDER SUMMARY -->
       <div class="order-summary sticky">
         <order-summary [cartItems]="cartItems"></order-summary>        
       </div>
     </div>
-
   </div>
 </div>
 
