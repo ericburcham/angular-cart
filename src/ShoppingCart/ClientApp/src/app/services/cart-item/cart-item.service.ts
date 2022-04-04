@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
 
 export class CartItemService {
   
-  constructor(private http: HttpClient) {}
+  constructor(private readonly http: HttpClient) {}
 
   getCartItems(customerId?: number) {
-    return this.http.get('http://localhost:44462/api/cartitems/' + (customerId || 0))
+    return this.http.get('http://localhost:44462/api/cartitems/' + (customerId || 0));
   }
 }

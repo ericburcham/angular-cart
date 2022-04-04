@@ -1,4 +1,4 @@
-import { CartItem, DealType } from '../types';
+import { CartItem } from '../types';
 
 export function calculateItem(item: CartItem, data?: Partial<CartItem>) {
 

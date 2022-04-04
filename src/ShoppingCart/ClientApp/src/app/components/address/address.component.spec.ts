@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CustomerService } from 'src/app/services/customer/customer.service';
 import { AddressComponent } from './address.component';
 
 describe('AddressComponent', () => {
@@ -16,7 +15,6 @@ describe('AddressComponent', () => {
 
     await TestBed.configureTestingModule({
       declarations: [AddressComponent],
-      providers: [{provide: CustomerService, useValue: customerServiceStub}]
     })
     .compileComponents();
   });

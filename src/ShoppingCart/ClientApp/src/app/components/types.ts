@@ -1,13 +1,13 @@
-export type ShopItem = {
+export type Product = {
     sku: string,
     description: string,
     price: number,
-    id: number
+    id: number;
 };
 
 export type Deal = {
     deal: 'BuyOneGetOne',
-    description: 'Buy 1 get one free deal'
+    description: 'Buy 1 get one free deal';
 };
 
 export type DealType = 'BuyOneGetOne' | 'DollarOff' | 'NoDeal' | 'TenPercentOff';

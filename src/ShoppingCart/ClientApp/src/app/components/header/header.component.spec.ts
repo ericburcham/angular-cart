@@ -10,8 +10,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(async () => {
     // Stub CustomerService to provide the test username.
+    // TODO:  Fix this.
     customerServiceStub = {
-      fullName: 'Boba Fett'
     };
 
     await TestBed.configureTestingModule({

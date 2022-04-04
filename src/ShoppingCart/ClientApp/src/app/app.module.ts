@@ -3,8 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { LoremIpsumComponent } from './components/lorem-ipsum/lorem-ipsum.component';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddressComponent } from './components/address/address.component';
@@ -16,7 +14,6 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
 @NgModule({
   declarations: [
     AppComponent,
-    LoremIpsumComponent,
     HeaderComponent,
     AddressComponent,
     DiscountSelectorComponent,
