@@ -1,8 +1,9 @@
 import { AfterViewInit, Component, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime, distinctUntilChanged, filter, tap } from 'rxjs/operators';
-import { ProductService } from 'src/app/services/product/product.service';
+
 import { CartItem, Product } from '../types';
+import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({
   selector: 'new-cart-item',

@@ -1,7 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
-
 import { DealSelectorComponent } from './deal-selector.component';
+import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 
 describe('DealSelectorComponent', () => {
   let component: DealSelectorComponent;
