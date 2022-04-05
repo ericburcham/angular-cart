@@ -5,10 +5,10 @@ import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.
 import { CartItem, Deal, DealType } from '../types';
 
 @Component({
-  selector: 'discount-selector',
-  templateUrl: './discount-selector.component.html',
+  selector: 'deal-selector',
+  templateUrl: './deal-selector.component.html',
 })
-export class DiscountSelectorComponent implements OnInit {
+export class DealSelectorComponent implements OnInit {
   
   sku?: any;
   deal?: DealType;
