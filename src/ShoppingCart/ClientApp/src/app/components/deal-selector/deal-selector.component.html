@@ -1,5 +1,5 @@
 <div class="deal-selector solid padded">
-    <strong>Apply Discount</strong>
+    <strong>Apply Deal</strong>
     <div class="flex row">
         <label>SKU:</label>
         <select (change)="handleSkuChange($event)">
@@ -13,7 +13,7 @@
         </select>
     </div>
     <div class="flex row">
-        <label>Discount Type:</label>
+        <label>Deal Type:</label>
         <select (change)="handleDealChange($event)">
             <option [value]=""></option>
             <ng-container *ngFor="let item of deals">
