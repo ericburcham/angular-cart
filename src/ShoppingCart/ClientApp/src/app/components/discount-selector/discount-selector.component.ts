@@ -7,7 +7,6 @@ import { CartItem, Deal, DealType } from '../types';
 @Component({
   selector: 'discount-selector',
   templateUrl: './discount-selector.component.html',
-  styleUrls: ['./discount-selector.component.css'],
 })
 export class DiscountSelectorComponent implements OnInit {
   
