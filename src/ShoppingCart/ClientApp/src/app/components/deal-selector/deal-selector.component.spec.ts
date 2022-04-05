@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+
 import { DealSelectorComponent } from './deal-selector.component';
 import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 
