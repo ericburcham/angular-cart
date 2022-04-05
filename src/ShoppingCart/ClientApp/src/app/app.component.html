@@ -20,7 +20,7 @@
     
     <!-- MAIN PANEL   -->
     <div class="main-panel grow">
-      <cart-items [data]="cartItems" (onChange)="handleCartItemsChange($event)" ></cart-items>
+      <cart-items [cartItems]="cartItems" (onChange)="handleCartItemsChange($event)" ></cart-items>
       <new-cart-item
         [cartItems]="cartItems"
         (onAdd)="handleAddCartItem($event)"

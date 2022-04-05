@@ -1,23 +1,23 @@
 import { CartItem } from '../types';
 
-export function calculateItem(item: CartItem, data?: Partial<CartItem>) {
+export function calculateCartItem(cartItem: CartItem, updatedCartItem?: Partial<CartItem>) {
 
   const calculatedItem: CartItem = { 
-    ...item,
-    subTotal: item.price * item.quantity,
+    ...cartItem,
+    subTotal: cartItem.price * cartItem.quantity,
   };
 
-  Object.assign(calculatedItem, data);
+  Object.assign(calculatedItem, updatedCartItem);
   
   switch (calculatedItem.deal) {
     case 'BuyOneGetOne':
-      calculatedItem.discount = Math.floor(item.quantity / 2) * item.price;
+      calculatedItem.discount = Math.floor(cartItem.quantity / 2) * cartItem.price;
       break;
     case 'TenPercentOff':
       calculatedItem.discount = calculatedItem.subTotal * 0.1;
       break;
     case 'DollarOff':
-      calculatedItem.discount = item.quantity;
+      calculatedItem.discount = cartItem.quantity;
       break;
     default:
       calculatedItem.discount = 0;

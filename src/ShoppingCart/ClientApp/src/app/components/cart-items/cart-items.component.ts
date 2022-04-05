@@ -7,17 +7,17 @@ import { CartItem } from '../types';
   templateUrl: 'cart-items.component.html',
 })
 export class CartItemsComponent {
-  @Input('data') data: CartItem[] = [];
+  @Input('cartItems') cartItems: CartItem[] = [];
   @Output('onChange') onChange = new EventEmitter();
 
   constructor(public shoppingCart: ShoppingCartService) {}
 
   getItems() {
-    return this.data;
+    return this.cartItems;
   }
 
   handleQuantityChange(e: any) {
-    const items = this.data.map(
+    const items = this.cartItems.map(
       (item: CartItem) => {
         return {
           ...item,
