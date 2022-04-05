@@ -15,7 +15,7 @@ describe('AddressComponent', () => {
 
   describe('when an address does not have a value for address2', () => {
     // Test address
-    let testData: any;
+    let testAddress: any;
 
     // Extract DOM values here for later assertions.
     let addressType: string;
@@ -28,7 +28,7 @@ describe('AddressComponent', () => {
 
     beforeEach(() => {
       // Create a test address.
-      testData = {
+      testAddress = {
         addressType: 'addressWithoutAddress2.addressType',
         addressee: 'addressWithoutAddress2.addressee',
         address1: 'addressWithoutAddress2.address1',
@@ -38,7 +38,7 @@ describe('AddressComponent', () => {
       };
 
       // Set the `data` input's value to the test address.
-      component.data = testData;
+      component.address = testAddress;
 
       // Perform initial template binding.
       fixture.detectChanges();
@@ -55,27 +55,27 @@ describe('AddressComponent', () => {
     });
 
     it('should have the correct addressType', () => {
-      expect(addressType).toBe(`${testData.addressType} address`);
+      expect(addressType).toBe(`${testAddress.addressType} address`);
     });
 
     it('should have the correct addressee', () => {
-      expect(addressee).toBe(testData.addressee);
+      expect(addressee).toBe(testAddress.addressee);
     });
 
     it('should have the correct address1', () => {
-      expect(address1).toBe(testData.address1);
+      expect(address1).toBe(testAddress.address1);
     });
 
     it('should have the correct city', () => {
-      expect(city).toBe(testData.city);
+      expect(city).toBe(testAddress.city);
     });
 
     it('should have the correct state', () => {
-      expect(state).toBe(testData.state);
+      expect(state).toBe(testAddress.state);
     });
 
     it('should have the correct zip code', () => {
-      expect(zip).toBe(testData.zip);
+      expect(zip).toBe(testAddress.zip);
     });
 
     it('should not have an address2', () => {
@@ -108,7 +108,7 @@ describe('AddressComponent', () => {
       };
 
       // Set the `data` input's value to the test address.
-      component.data = testData;
+      component.address = testData;
 
       // Perform initial template binding.
       fixture.detectChanges();
