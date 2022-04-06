@@ -1,4 +1,5 @@
 import { Component, Input, SimpleChanges } from '@angular/core';
+
 import { CartItem, OrderSummary } from '../types';
 import { calculateOrderSummary } from './calculateOrderSummary';
 

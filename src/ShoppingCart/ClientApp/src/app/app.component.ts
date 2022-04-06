@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { calculateItem } from './components/cart-items/calculateItem';
-import { CartItem, CartItemDTO } from './components/types';
+
+import { calculateCartItem } from './components/cart-items/calculateCartItem';
+import { CartItem, } from './components/types';
 import { CartItemService } from './services/cart-item/cart-item.service';
 import { CustomerService } from './services/customer/customer.service';
 
@@ -35,7 +36,7 @@ export class AppComponent implements OnInit {
       .subscribe((r: any) => {
         if (r.ok) {
           this.cartItems = r.data.map((x: CartItem) => {
-            return calculateItem(x);
+            return calculateCartItem(x);
           });
           this.updateItems();
         }
@@ -45,7 +46,7 @@ export class AppComponent implements OnInit {
   updateItems(dataForItem?: (x: CartItem) => any) {
     this.cartItems = this.cartItems.map(
       (item: CartItem) => 
-        calculateItem(
+        calculateCartItem(
           item, 
           dataForItem ? dataForItem(item) : undefined
         )
@@ -81,7 +82,7 @@ export class AppComponent implements OnInit {
   _addNewItem(item: CartItem) {
     this.cartItems = [
       ...this.cartItems,
-      calculateItem(item)
+      calculateCartItem(item)
     ];
     this.updateItems();
   }
