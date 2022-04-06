@@ -52,7 +52,9 @@ describe('CustomerService', () => {
       customerService.getCustomerInfo(1).subscribe({
         // This `subscribe` callback asserts that correct data was returned.
         // It is invoked when we flush our request later.
-        next: actualResponse => expect(actualResponse).toEqual(expectedResponse, 'should return the expected response'),
+        next: actualResponse => expect(actualResponse)
+        .withContext('should return the expected response')
+        .toEqual(expectedResponse),
         error: fail
       });
 
@@ -85,7 +87,9 @@ describe('CustomerService', () => {
       customerService.getCustomerInfo().subscribe({
         // This `subscribe` callback asserts that correct data was returned.
         // It is invoked when we flush our request later.
-        next: actualResponse => expect(actualResponse).toEqual(expectedResponse, 'should return the expected response'),
+        next: actualResponse => expect(actualResponse)
+        .withContext('should return the expected response')
+        .toEqual(expectedResponse),
         error: fail
       });
 
