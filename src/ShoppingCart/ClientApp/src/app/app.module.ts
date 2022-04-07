@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { AddressComponent } from './components/address/address.component';
+import { AddressComponent } from './shared/components/address/address.component';
 import { AppComponent } from './app.component';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { DealSelectorComponent } from './components/deal-selector/deal-selector.component';
