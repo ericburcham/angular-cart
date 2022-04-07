@@ -3,29 +3,17 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 
-import { AddressComponent } from './components/address/address.component';
 import { AppComponent } from './app.component';
-import { CartItemsComponent } from './components/cart-items/cart-items.component';
-import { DealSelectorComponent } from './components/deal-selector/deal-selector.component';
-import { HeaderComponent } from './components/header/header.component';
-import { NewCartItemComponent } from './components/new-cart-item/new-cart-item.component';
-import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
 
 @NgModule({
   bootstrap: [AppComponent],
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    AddressComponent,
-    DealSelectorComponent,
-    CartItemsComponent,
-    OrderSummaryComponent,
-    NewCartItemComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
-    HttpClientModule,
     FormsModule,
+    HttpClientModule,
+    ShoppingCartModule,
   ],
   providers: [],
 })

@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 
 import { CartItem, Deal, DealType } from '../types';
-import { DealService } from 'src/app/services/deal/deal.service';
+import { DealService } from 'src/app/modules/shopping-cart/services/deal/deal.service';
 
 @Component({
   selector: 'deal-selector',
