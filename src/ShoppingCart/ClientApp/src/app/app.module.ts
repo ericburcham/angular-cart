@@ -7,7 +7,7 @@ import { AddressComponent } from './components/address/address.component';
 import { AppComponent } from './app.component';
 import { CartItemsComponent } from './components/cart-items/cart-items.component';
 import { DealSelectorComponent } from './components/deal-selector/deal-selector.component';
-import { CartHeaderComponent } from './components/cart-header/cart-header.component';
+import { CartHeaderComponent } from './modules/shopping-cart/components/cart-header/cart-header.component';
 import { NewCartItemComponent } from './components/new-cart-item/new-cart-item.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
