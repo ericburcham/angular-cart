@@ -10,7 +10,7 @@ import { CartItemService } from '../../services/cart-item/cart-item.service';
   selector: 'shopping-cart',
   templateUrl: './shopping-cart.component.html',
 })
-export class ShoppingCartComponet implements OnInit {
+export class ShoppingCartComponent implements OnInit {
   cartItems: CartItem[] = [];
   cartSkus: Record<string, boolean> = {};
   customer: any = { billingAddress: {}, shippingAddress: {} };
