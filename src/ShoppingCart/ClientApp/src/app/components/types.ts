@@ -1,34 +1,38 @@
 export type Product = {
-    sku: string,
-    description: string,
-    price: number,
-    id: number;
+  description: string;
+  id: number;
+  price: number;
+  sku: string;
 };
 
 export type Deal = {
-    deal: 'BuyOneGetOne',
-    description: 'Buy 1 get one free deal';
+  deal: 'BuyOneGetOne';
+  description: 'Buy 1 get one free deal';
 };
 
-export type DealType = 'BuyOneGetOne' | 'DollarOff' | 'NoDeal' | 'TenPercentOff';
+export type DealType =
+  | 'BuyOneGetOne'
+  | 'DollarOff'
+  | 'NoDeal'
+  | 'TenPercentOff';
 
 export type CartItemDTO = {
-    deal: DealType,
-    quantity: number,
-    sku: string,
-    description: string,
-    price: number,
-    id: number,
+  deal: DealType;
+  description: string;
+  id: number;
+  price: number;
+  quantity: number;
+  sku: string;
 };
 
 export interface CartItem extends CartItemDTO {
-    subTotal: number;
-    total: number;
-    discount: number;
+  discount: number;
+  subTotal: number;
+  total: number;
 }
 
 export type OrderSummary = {
-    subTotal: number;
-    discount: number;
-    total: number;
+  discount: number;
+  subTotal: number;
+  total: number;
 };

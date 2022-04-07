@@ -1,30 +1,25 @@
 <div class="new-cart-item padded">
-    
-    <strong>Add a product</strong>
-    <div class="flex row spaced align-items-center">
-        <div class="flex row grow">
-            <input 
-                #input
-                class="grow"
-                type="text" 
-                list="suggestions" 
-                (change)="handleSelect($event)"
-                placeholder="What do you want to add?"
-            />
+  <strong>Add a product</strong>
+  <div class="flex row spaced align-items-center">
+    <div class="flex row grow">
+      <input
+        #input
+        class="grow"
+        type="text"
+        list="suggestions"
+        (change)="handleSelect($event)"
+        placeholder="What do you want to add?"
+      />
 
-            <datalist id="suggestions">
-                <option 
-                    *ngFor="let product of suggestions" 
-                    [value]="product.sku"
-                    
-                >{{product.description}}</option>
-            </datalist>
-        </div>
-        
-        <div>
-            <button [disabled]="!selectedProduct" (click)="handleAdd()">Add</button>
-        </div>
-        
+      <datalist id="suggestions">
+        <option *ngFor="let product of suggestions" [value]="product.sku">
+          {{ product.description }}
+        </option>
+      </datalist>
     </div>
 
+    <div>
+      <button [disabled]="!selectedProduct" (click)="handleAdd()">Add</button>
+    </div>
+  </div>
 </div>

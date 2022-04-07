@@ -1,22 +1,22 @@
 <div class="order-summary padded">
-    <div class="subtotal">
-        <label>Subtotal:</label>
-        <div class="value">
-            {{summary.subTotal|currency}}
-        </div>
+  <div class="subtotal">
+    <label>Subtotal:</label>
+    <div class="value">
+      {{ summary.subTotal | currency }}
     </div>
+  </div>
 
-    <div *ngIf="summary.discount" class="discounts">
-        <label>Discounts:</label>
-        <div class="value">
-            {{summary.discount|currency}}
-        </div>
+  <div *ngIf="summary.discount" class="discounts">
+    <label>Discounts:</label>
+    <div class="value">
+      {{ summary.discount | currency }}
     </div>
+  </div>
 
-    <div class="total">
-        <label>Total:</label>
-        <div class="value">
-            {{summary.total|currency}}
-        </div>
+  <div class="total">
+    <label>Total:</label>
+    <div class="value">
+      {{ summary.total | currency }}
     </div>
+  </div>
 </div>

@@ -18,14 +18,12 @@ export class CartItemsComponent {
   }
 
   handleQuantityChange(e: any) {
-    const items = this.cartItems.map(
-      (item: CartItem) => {
-        return {
-          ...item,
-          quantity: (item.sku === e.sku) ? +e.event.target.value : item.quantity,
-        };
-      }, []
-    );
+    const items = this.cartItems.map((item: CartItem) => {
+      return {
+        ...item,
+        quantity: item.sku === e.sku ? +e.event.target.value : item.quantity,
+      };
+    }, []);
     this.onChange.emit(items);
   }
 }

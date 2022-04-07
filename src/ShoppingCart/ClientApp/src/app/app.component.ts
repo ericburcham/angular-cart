@@ -1,22 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
 import { calculateCartItem } from './components/cart-items/calculateCartItem';
-import { CartItem, } from './components/types';
+import { CartItem } from './components/types';
 import { CartItemService } from './services/cart-item/cart-item.service';
 import { CustomerService } from './services/customer/customer.service';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
 })
-
 export class AppComponent implements OnInit {
-
-  title = 'app';
-  
-  customer: any = { billingAddress: {}, shippingAddress: {} };
   cartItems: CartItem[] = [];
   cartSkus: Record<string, boolean> = {};
+  customer: any = { billingAddress: {}, shippingAddress: {} };
+  title = 'app';
 
   constructor(
     public customerService: CustomerService,
@@ -24,51 +21,41 @@ export class AppComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
-    this.customerService.getCustomerInfo()
-      .subscribe((r: any) => {
-        if (r.ok) {
-          this.customer = r.data;
-        }
-      });
+    this.customerService.getCustomerInfo().subscribe((r: any) => {
+      if (r.ok) {
+        this.customer = r.data;
+      }
+    });
 
-    this.cartItemService.getCartItems()
-      .subscribe((r: any) => {
-        if (r.ok) {
-          this.cartItems = r.data.map((x: CartItem) => {
-            return calculateCartItem(x);
-          });
-          this.updateItems();
-        }
-      });
+    this.cartItemService.getCartItems().subscribe((r: any) => {
+      if (r.ok) {
+        this.cartItems = r.data.map((x: CartItem) => {
+          return calculateCartItem(x);
+        });
+        this.updateItems();
+      }
+    });
   }
 
   updateItems(dataForItem?: (x: CartItem) => any) {
-    this.cartItems = this.cartItems.map(
-      (item: CartItem) => 
-        calculateCartItem(
-          item, 
-          dataForItem ? dataForItem(item) : undefined
-        )
+    this.cartItems = this.cartItems.map((item: CartItem) =>
+      calculateCartItem(item, dataForItem ? dataForItem(item) : undefined)
     );
     // create sku map for carted items
     this.cartSkus = this.cartItems.reduce(
-      (map: any, item: CartItem) => Object.assign(map, { [item.sku]: true })
-    , {});
+      (map: any, item: CartItem) => Object.assign(map, { [item.sku]: true }),
+      {}
+    );
   }
 
   handleApplyDeal(e: any) {
-    this.updateItems(
-      (x: CartItem) => (
-        x.sku === e.sku
-        ? { deal: e.deal } 
-        : { deal: undefined } 
-      )
+    this.updateItems((x: CartItem) =>
+      x.sku === e.sku ? { deal: e.deal } : { deal: undefined }
     );
   }
 
   handleCartItemsChange(items: CartItem[]) {
-    this.cartItems = [ ...items ];
+    this.cartItems = [...items];
     this.updateItems();
   }
 
@@ -76,22 +63,20 @@ export class AppComponent implements OnInit {
     if (this.cartSkus[item.sku]) {
       return this._addToExistingItem(item);
     }
-    this._addNewItem(item);    
+    this._addNewItem(item);
   }
 
   _addNewItem(item: CartItem) {
-    this.cartItems = [
-      ...this.cartItems,
-      calculateCartItem(item)
-    ];
+    this.cartItems = [...this.cartItems, calculateCartItem(item)];
     this.updateItems();
   }
 
   _addToExistingItem(item: CartItem) {
-    this.updateItems((existing: CartItem) => ({ 
-      quantity: existing.sku === item.sku 
-        ? existing.quantity + item.quantity 
-        : existing.quantity
-    }))
+    this.updateItems((existing: CartItem) => ({
+      quantity:
+        existing.sku === item.sku
+          ? existing.quantity + item.quantity
+          : existing.quantity,
+    }));
   }
 }

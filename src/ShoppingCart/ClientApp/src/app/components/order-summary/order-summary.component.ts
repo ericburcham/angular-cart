@@ -1,19 +1,17 @@
-import { Component, Input, SimpleChanges } from '@angular/core';
+import { calculateOrderSummary } from './calculateOrderSummary';
 
 import { CartItem, OrderSummary } from '../types';
-import { calculateOrderSummary } from './calculateOrderSummary';
+import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'order-summary',
-  templateUrl: 'order-summary.component.html'
+  templateUrl: 'order-summary.component.html',
 })
-
 export class OrderSummaryComponent {
-
   summary: Partial<OrderSummary> = {};
 
   @Input('cartItems') cartItems: CartItem[] = [];
-  
+
   ngOnChanges(changes: SimpleChanges) {
     if (changes.cartItems) {
       const items = changes.cartItems.currentValue;
@@ -23,4 +21,3 @@ export class OrderSummaryComponent {
     }
   }
 }
-

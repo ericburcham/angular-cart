@@ -1,30 +1,31 @@
 <div class="deal-selector solid padded">
-    <strong>Apply Deal</strong>
-    <div class="flex row">
-        <label>SKU:</label>
-        <select (change)="handleSkuChange($event)">
-            <option [value]=""></option>
-            <ng-container *ngFor="let item of cartItems">
-                <option 
-                    [value]="item.sku"
-                    [selected]="item.sku === itemWithDeal.sku"
-                >{{item.description}}</option>
-            </ng-container>
-        </select>
-    </div>
-    <div class="flex row">
-        <label>Deal Type:</label>
-        <select (change)="handleDealChange($event)">
-            <option [value]=""></option>
-            <ng-container *ngFor="let item of deals">
-                <option 
-                    [value]="item.deal"
-                    [selected]="item.deal === itemWithDeal.deal"
-                >{{item.description}}</option>
-            </ng-container>
-        </select>
-    </div>
-    <div class="textAlignRight footer">
-        <button (click)="handleApplyDeal()">Apply</button>
-    </div>
+  <strong>Apply Deal</strong>
+  <div class="flex row">
+    <label>SKU:</label>
+    <select (change)="handleSkuChange($event)">
+      <option [value]=""></option>
+      <ng-container *ngFor="let item of cartItems">
+        <option [value]="item.sku" [selected]="item.sku === itemWithDeal.sku">
+          {{ item.description }}
+        </option>
+      </ng-container>
+    </select>
+  </div>
+  <div class="flex row">
+    <label>Deal Type:</label>
+    <select (change)="handleDealChange($event)">
+      <option [value]=""></option>
+      <ng-container *ngFor="let item of deals">
+        <option
+          [value]="item.deal"
+          [selected]="item.deal === itemWithDeal.deal"
+        >
+          {{ item.description }}
+        </option>
+      </ng-container>
+    </select>
+  </div>
+  <div class="textAlignRight footer">
+    <button (click)="handleApplyDeal()">Apply</button>
+  </div>
 </div>

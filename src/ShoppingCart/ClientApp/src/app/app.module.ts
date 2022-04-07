@@ -11,8 +11,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { NewCartItemComponent } from './components/new-cart-item/new-cart-item.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 
-
 @NgModule({
+  bootstrap: [AppComponent],
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -20,7 +20,7 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     DealSelectorComponent,
     CartItemsComponent,
     OrderSummaryComponent,
-    NewCartItemComponent
+    NewCartItemComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,6 +28,5 @@ import { OrderSummaryComponent } from './components/order-summary/order-summary.
     FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

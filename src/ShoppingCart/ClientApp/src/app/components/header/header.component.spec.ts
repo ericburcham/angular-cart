@@ -1,20 +1,22 @@
-import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { By } from "@angular/platform-browser";
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { By } from '@angular/platform-browser';
 
-import { HeaderComponent } from "./header.component";
+import { HeaderComponent } from './header.component';
 
-describe('HeaderComponent', () =>{
+describe('HeaderComponent', () => {
   // System under test
   let component: HeaderComponent;
   let fixture: ComponentFixture<HeaderComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({declarations: [HeaderComponent]}).compileComponents();
+    TestBed.configureTestingModule({
+      declarations: [HeaderComponent],
+    }).compileComponents();
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
   });
 
-  describe('when a customer has a fullName', () =>{
+  describe('when a customer has a fullName', () => {
     // Test customer
     let testCustomer: any;
 
@@ -24,8 +26,8 @@ describe('HeaderComponent', () =>{
     beforeEach(() => {
       // Create a test customer.
       testCustomer = {
-        fullName: 'Boba Fett'
-      }
+        fullName: 'Boba Fett',
+      };
 
       // Set the `customer` input's value to the test customer.
       component.customer = testCustomer;
@@ -35,11 +37,12 @@ describe('HeaderComponent', () =>{
 
       // Read values from the DOM
       const debugElement = fixture.debugElement;
-      fullName = debugElement.query(By.css('.customer-fullName')).nativeElement.textContent;
+      fullName = debugElement.query(By.css('.customer-fullName')).nativeElement
+        .textContent;
     });
 
-    it ('should have the correct full name', () => {
-      expect(fullName).toBe(`Hi ${testCustomer.fullName}`)
+    it('should have the correct full name', () => {
+      expect(fullName).toBe(`Hi ${testCustomer.fullName}`);
     });
   });
-})
+});

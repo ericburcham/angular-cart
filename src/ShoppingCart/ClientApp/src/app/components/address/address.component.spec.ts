@@ -1,5 +1,5 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AddressComponent } from './address.component';
 
@@ -9,7 +9,9 @@ describe('AddressComponent', () => {
   let fixture: ComponentFixture<AddressComponent>;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({ declarations: [AddressComponent] }).compileComponents();
+    TestBed.configureTestingModule({
+      declarations: [AddressComponent],
+    }).compileComponents();
     fixture = TestBed.createComponent(AddressComponent);
     component = fixture.componentInstance;
   });
@@ -46,9 +48,12 @@ describe('AddressComponent', () => {
 
       // Read values from the DOM
       const debugElement = fixture.debugElement;
-      addressType = debugElement.query(By.css('.address-type')).nativeElement.textContent;
-      addressee = debugElement.query(By.css('.addressee')).nativeElement.textContent;
-      address1 = debugElement.query(By.css('.address1')).nativeElement.textContent;
+      addressType = debugElement.query(By.css('.address-type')).nativeElement
+        .textContent;
+      addressee = debugElement.query(By.css('.addressee')).nativeElement
+        .textContent;
+      address1 = debugElement.query(By.css('.address1')).nativeElement
+        .textContent;
       address2 = debugElement.query(By.css('.address2')); // Cannot read `nativeElement` as we expect the query result to be null.
       city = debugElement.query(By.css('.city')).nativeElement.textContent;
       state = debugElement.query(By.css('.state')).nativeElement.textContent;
@@ -116,10 +121,14 @@ describe('AddressComponent', () => {
 
       // Read values from the DOM
       const debugElement = fixture.debugElement;
-      addressType = debugElement.query(By.css('.address-type')).nativeElement.textContent;
-      addressee = debugElement.query(By.css('.addressee')).nativeElement.textContent;
-      address1 = debugElement.query(By.css('.address1')).nativeElement.textContent;
-      address2 = debugElement.query(By.css('.address2')).nativeElement.textContent;
+      addressType = debugElement.query(By.css('.address-type')).nativeElement
+        .textContent;
+      addressee = debugElement.query(By.css('.addressee')).nativeElement
+        .textContent;
+      address1 = debugElement.query(By.css('.address1')).nativeElement
+        .textContent;
+      address2 = debugElement.query(By.css('.address2')).nativeElement
+        .textContent;
       city = debugElement.query(By.css('.city')).nativeElement.textContent;
       state = debugElement.query(By.css('.state')).nativeElement.textContent;
       zip = debugElement.query(By.css('.zip')).nativeElement.textContent;
