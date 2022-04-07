@@ -14,7 +14,7 @@ import {
   tap,
 } from 'rxjs/operators';
 
-import { CartItem, Product } from '../../modules/shopping-cart/components/types';
+import { CartItem, Product } from '../../../modules/shopping-cart/components/types';
 import { ProductService } from 'src/app/services/product/product.service';
 
 @Component({

@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { CartItemsComponent } from './shared/components/cart-items/cart-items.component';
 import { DealSelectorComponent } from './shared/components/deal-selector/deal-selector.component';
 import { CartHeaderComponent } from './modules/shopping-cart/components/cart-header/cart-header.component';
-import { NewCartItemComponent } from './components/new-cart-item/new-cart-item.component';
+import { NewCartItemComponent } from './shared/components/new-cart-item/new-cart-item.component';
 import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
 
