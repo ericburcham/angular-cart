@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { calculateCartItem } from '../cart-items/calculateCartItem';
+
 import { CartItem } from '../types';
 import { CustomerService } from 'src/app/shared/services/customer/customer.service';
 import { CartItemService } from '../../services/cart-item/cart-item.service';
@@ -13,7 +14,7 @@ export class ShoppingCartComponet implements OnInit {
   cartItems: CartItem[] = [];
   cartSkus: Record<string, boolean> = {};
   customer: any = { billingAddress: {}, shippingAddress: {} };
-  title = 'app';
+  title = 'Shopping Cart';
 
   constructor(
     public customerService: CustomerService,
