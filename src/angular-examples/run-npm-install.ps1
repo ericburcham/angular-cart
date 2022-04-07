@@ -13,7 +13,7 @@ foreach ($subdirectory in $subdirectories) {
     Write-Host "`n`n`n# --------------------------------------------------------------------------" -ForegroundColor Green;
     Write-Host "Installing NPM Packages for example:" $subdirectory.Name -ForegroundColor Green;
     Write-Host "# --------------------------------------------------------------------------" -ForegroundColor Green;
-    Invoke-Expression "npm install --force";
+    npm install --force;
 }
 
 Set-Location $currentDirectory;
