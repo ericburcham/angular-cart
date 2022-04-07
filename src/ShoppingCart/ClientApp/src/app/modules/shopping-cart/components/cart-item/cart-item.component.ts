@@ -21,7 +21,7 @@ import { ProductService } from 'src/app/shared/services/product/product.service'
   selector: 'cart-item',
   templateUrl: 'cart-item.component.html',
 })
-export class NewCartItemComponent implements AfterViewInit {
+export class CartItemComponent implements AfterViewInit {
   selectedProduct?: Partial<CartItem>;
   suggestions: Product[] = [];
 
