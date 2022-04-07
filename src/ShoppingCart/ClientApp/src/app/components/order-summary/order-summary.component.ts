@@ -1,6 +1,6 @@
 import { calculateOrderSummary } from './calculateOrderSummary';
 
-import { CartItem, OrderSummary } from '../types';
+import { CartItem, OrderSummary } from '../../modules/shopping-cart/components/types';
 import { Component, Input, SimpleChanges } from '@angular/core';
 
 @Component({

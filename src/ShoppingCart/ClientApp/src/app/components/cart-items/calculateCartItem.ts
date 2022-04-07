@@ -1,4 +1,4 @@
-import { CartItem } from '../types';
+import { CartItem } from '../../modules/shopping-cart/components/types';
 
 export function calculateCartItem(
   cartItem: CartItem,
