@@ -9,7 +9,6 @@ import {
 
 import { CartItem, Deal, DealType } from '../types';
 import { DealService } from 'src/app/services/deal/deal.service';
-import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'deal-selector',
@@ -24,10 +23,7 @@ export class DealSelectorComponent implements OnInit {
   @Input('cartItems') cartItems: CartItem[] = [];
   @Output('onApplyDeal') onApplyDeal = new EventEmitter<any>();
 
-  constructor(
-    public cart: ShoppingCartService,
-    public dealService: DealService
-  ) {}
+  constructor(public dealService: DealService) {}
 
   ngOnInit(): void {
     this.dealService.getDeals().subscribe((r: any) => {
