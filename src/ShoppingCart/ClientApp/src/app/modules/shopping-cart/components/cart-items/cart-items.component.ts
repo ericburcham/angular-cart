@@ -1,7 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 import { CartItem } from '../types';
-import { ShoppingCartService } from '../../services/shopping-cart/shopping-cart.service';
 
 @Component({
   selector: 'cart-items',
@@ -11,7 +10,7 @@ export class CartItemsComponent {
   @Input('cartItems') cartItems: CartItem[] = [];
   @Output('onChange') onChange = new EventEmitter();
 
-  constructor(public shoppingCart: ShoppingCartService) {}
+  constructor() {}
 
   getItems() {
     return this.cartItems;
