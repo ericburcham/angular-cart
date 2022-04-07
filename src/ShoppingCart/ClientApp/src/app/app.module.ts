@@ -5,11 +5,11 @@ import { NgModule } from '@angular/core';
 
 import { AddressComponent } from './shared/components/address/address.component';
 import { AppComponent } from './app.component';
-import { CartItemsComponent } from './shared/components/cart-items/cart-items.component';
-import { DealSelectorComponent } from './shared/components/deal-selector/deal-selector.component';
+import { CartItemsComponent } from './modules/shopping-cart/components/cart-items/cart-items.component';
+import { DealSelectorComponent } from './modules/shopping-cart/components/deal-selector/deal-selector.component';
 import { CartHeaderComponent } from './modules/shopping-cart/components/cart-header/cart-header.component';
-import { NewCartItemComponent } from './shared/components/new-cart-item/new-cart-item.component';
-import { OrderSummaryComponent } from './components/order-summary/order-summary.component';
+import { NewCartItemComponent } from './modules/shopping-cart/components/cart-item/cart-item.component';
+import { OrderSummaryComponent } from './modules/shopping-cart/components/order-summary/order-summary.component';
 import { ShoppingCartModule } from './modules/shopping-cart/shopping-cart.module';
 
 @NgModule({

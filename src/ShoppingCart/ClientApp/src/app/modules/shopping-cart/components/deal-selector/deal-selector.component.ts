@@ -7,8 +7,8 @@ import {
   SimpleChanges,
 } from '@angular/core';
 
-import { CartItem, Deal, DealType } from '../../../modules/shopping-cart/components/types';
-import { DealService } from 'src/app/services/deal/deal.service';
+import { CartItem, Deal, DealType } from '../types';
+import { DealService } from 'src/app/modules/shopping-cart/services/deal/deal.service';
 
 @Component({
   selector: 'deal-selector',

@@ -1,4 +1,4 @@
-import { CartItem, OrderSummary } from '../../modules/shopping-cart/components/types';
+import { CartItem, OrderSummary } from '../types';
 
 export function calculateOrderSummary(items: CartItem[]) {
   return items.reduce(

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { calculateCartItem } from './shared/components/cart-items/calculateCartItem';
+import { calculateCartItem } from './modules/shopping-cart/components/cart-items/calculateCartItem';
 import { CartItem } from './modules/shopping-cart/components/types';
-import { CartItemService } from './services/cart-item/cart-item.service';
-import { CustomerService } from './services/customer/customer.service';
+import { CartItemService } from './modules/shopping-cart/services/cart-item/cart-item.service';
+import { CustomerService } from './shared/services/customer/customer.service';
 
 @Component({
   selector: 'app-root',

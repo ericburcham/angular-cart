@@ -14,12 +14,12 @@ import {
   tap,
 } from 'rxjs/operators';
 
-import { CartItem, Product } from '../../../modules/shopping-cart/components/types';
-import { ProductService } from 'src/app/services/product/product.service';
+import { CartItem, Product } from '../types';
+import { ProductService } from 'src/app/shared/services/product/product.service';
 
 @Component({
-  selector: 'new-cart-item',
-  templateUrl: 'new-cart-item.component.html',
+  selector: 'cart-item',
+  templateUrl: 'cart-item.component.html',
 })
 export class NewCartItemComponent implements AfterViewInit {
   selectedProduct?: Partial<CartItem>;
