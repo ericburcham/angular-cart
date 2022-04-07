@@ -5,7 +5,7 @@ Clear-Host;
 $currentDirectory = Get-Location;
 
 # Get the subdirectories of the current folder.
-$subdirectories = Get-ChildItem $currentDirectory | ? {$_.PSIsContainer}
+$subdirectories = Get-ChildItem $currentDirectory | Where-Object {$_.PSIsContainer}
 
 # Iterate through the subdirectores.
 foreach ($subdirectory in $subdirectories) {
@@ -15,10 +15,10 @@ foreach ($subdirectory in $subdirectories) {
     Write-Host "# --------------------------------------------------------------------------" -ForegroundColor Green;
     
     # Remove package-lock so we can rebuild it from scratch.
-    Remove-Item .\package-lock.json;
+    Remove-Item .\package-lock.json -ErrorAction Inquire;
 
     # Update angular CLI
-    Remove-Item .\node_modules\ -Force -Recurse;
+    Remove-Item .\node_modules\ -ErrorAction Inquire -Force -Recurse;
     npm uninstall --save-dev @angular/cli;
     npm install --save-dev @angular/cli@latest;
 

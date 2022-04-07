@@ -5,7 +5,7 @@ Clear-Host;
 $currentDirectory = Get-Location;
 
 # Get the subdirectories of the current folder.
-$subdirectories = Get-ChildItem $currentDirectory | ? {$_.PSIsContainer}
+$subdirectories = Get-ChildItem $currentDirectory | Where-Object {$_.PSIsContainer}
 
 # Iterate through the subdirectores.
 foreach ($subdirectory in $subdirectories) {
