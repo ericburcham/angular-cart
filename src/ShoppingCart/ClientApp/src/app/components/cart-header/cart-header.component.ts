@@ -2,8 +2,8 @@ import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'header',
-  templateUrl: './header.component.html',
+  templateUrl: './cart-header.component.html',
 })
-export class HeaderComponent {
+export class CartHeaderComponent {
   @Input('customer') customer: any;
 }

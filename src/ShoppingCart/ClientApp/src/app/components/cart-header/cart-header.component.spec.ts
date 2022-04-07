@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 
-import { HeaderComponent } from './header.component';
+import { CartHeaderComponent } from './cart-header.component';
 
 describe('HeaderComponent', () => {
   // System under test
-  let component: HeaderComponent;
-  let fixture: ComponentFixture<HeaderComponent>;
+  let component: CartHeaderComponent;
+  let fixture: ComponentFixture<CartHeaderComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [CartHeaderComponent],
     }).compileComponents();
-    fixture = TestBed.createComponent(HeaderComponent);
+    fixture = TestBed.createComponent(CartHeaderComponent);
     component = fixture.componentInstance;
   });
 
